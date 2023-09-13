@@ -1,4 +1,4 @@
-using MaintainSys.Data;
+using MaintainSys.Models;
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 
@@ -29,12 +29,15 @@ app.UseCors(builder => {
 
 
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAllOrigins");
 
 app.UseHttpsRedirection();
 
